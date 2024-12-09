@@ -92,19 +92,17 @@ CV_NDVI <- (tau_NDVI / NDVI)
 x11(width = 15, height = 5)
 # Split window to display multiple plots
 par(mfcol = c(1, 3), mar = c(4, 4, 2, 1), mai = rep(0.6, 4), xaxs = "i", yaxs = "i", cex = 1)
-# contour plots with specified levels
-contour(
-  z = NDVI, levels = c(-0.9, -0.8, -0.5, -0.2, 0, 0.2, 0.5, 0.8, 0.9),
-  xlab = "RED", ylab = "NIR", main = "NDVI", labcex = 1
-)
-contour(
-  z = tau_NDVI, levels = c(0.025, 0.05, 0.1, 0.5, 1, 5, 50),
-  xlab = "RED", ylab = "NIR", main = "Tau(NDVI) by Taylor method", labcex = 1
-)
-contour(
-  z = CV_NDVI, levels = c(0.02, 0.05, 0.1, 0.2, 0.5, 1, 2), labcex = 1,
-  xlab = "RED", ylab = "NIR", main = "CV(NDVI) by Taylor method"
-)
+# contour plots with specified levels (negative = red)
+contour(z=NDVI, levels=c(-0.95, -0.5, -0.2, -0.1, -0.05, 
+                         0, 0.05, 0.1, 0.2, 0.5, 0.95), 
+        col=c(rep("red", 5), "blue", rep("black",5)), xlab="RED", 
+        ylab="NIR", main="NDVI", labcex=1)
+contour(z=tau_NDVI, levels=c(0.01, 0.015, 0.02, 0.05, 0.1, 0.5),
+        xlab="RED", ylab="NIR", main="Tau(NDVI) by Taylor method",
+        labcex=1)
+contour(z=CV_NDVI, levels=c(-0.5, -0.2, -0.1, -0.05, 0.05, 0.1, 0.2, 0.5, 2),
+        xlab="RED", ylab="NIR", main="CV(NDVI) by Taylor method",
+        col=c(rep("red", 4), rep("black",5), labcex=1))
 ## --------------------------------------------------------------------------------#
 ## 3.2.- Taylor approcimation for rasters -------
 ### Read tiff data ------
