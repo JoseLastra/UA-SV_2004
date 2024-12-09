@@ -137,10 +137,14 @@ tau_SR <- app(fc_lorraine, ## Calculate Tau sr
 )
 plot(tau_SR, col = gray(1:100 / 100), main = "Tau(SR)")
 
-CV_SR <- app(c(tau_SR, SRim), fun =function(x) {x[1]/x[2]}, 
-             filename="1 Monday/Practical/CV_SR.tif", overwrite=T)
+CV_SR <- app(c(tau_SR, SRim),
+  fun = function(x) {
+    x[1] / x[2]
+  },
+  filename = "1 Monday/Practical/CV_SR.tif", overwrite = T
+)
 
-plot(CV_SR, col=gray(1:100/100), main= "CV(SR)", cex=1)
+plot(CV_SR, col = gray(1:100 / 100), main = "CV(SR)", cex = 1)
 
 
 
@@ -161,8 +165,9 @@ tau_NDVI <- app(fc_lorraine, ## Calculate Tau NDVI
 plot(tau_NDVI, col = gray(1:100 / 100), main = "Tau(NDVI)")
 
 CV_NDVI <- app(c(tau_NDVI, NDVIim), ## Calculate CV NDVI
-  fun = function(x) {x[1]/x[2]},
+  fun = function(x) {
+    x[1] / x[2]
+  },
   filename = "1 Monday/Practical/CV_NDVI.tif", overwrite = T
 )
 plot(CV_NDVI, col = gray(1:100 / 100), main = "CV(NDVI)")
-
