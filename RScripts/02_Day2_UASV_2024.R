@@ -307,7 +307,12 @@ MC_NDVI_p <- function(red, nir, devs, thr) {
 pp_NDVImc <- app(false_color, fun = function(x) MC_NDVI_p(x[2], x[3], devs, thr = 0.3),
                  filename="2 Tuesday/Practical/pp_NDVI_2.tif", overwrite = T)
 
+pp_NDVImc_sytze <- app(false_color, fun = function(x) mean(ifelse(MC_NDVI(x[2], x[3], devs) < 0.3,1,2)),
+                 filename="2 Tuesday/Practical/pp_NDVI_3.tif", overwrite = T)
+
+all.equal(pp_NDVImc, pp_NDVImc_sytze)
 plot(pp_NDVImc)
+plot(pp_NDVImc_sytze)
 plotRGB(false_color, r=3, g=2, b=1, stretch="lin", main="False Color")
 
 
