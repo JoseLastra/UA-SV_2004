@@ -29,5 +29,5 @@ z_sample <- 185 * phi_sample / (35 + phi_sample)
 mean(z_sample)
 sd(z_sample)
 hist(phi_sample, col = "LightBlue", main = "phi")
-hist(z_sample, col = "Orange", main = "z")
+hist(z_sample, col = "Orange", main = "z") 
 
