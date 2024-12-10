@@ -31,16 +31,18 @@ sd(z_sample)
 hist(phi_sample, col = "LightBlue", main = "phi")
 hist(z_sample, col = "Orange", main = "z")
 
+##----------------------------------------------------------------------#
 ## 3.2.- USLE erosion model --------
 # Monte Carlo uncertainty propagation USLE model
-n <- 1000
+n <- 5000
+set.seed(12345)
 R <- rnorm(n, 297, 72)
 K <- rnorm(n, 0.10, 0.05)
 L <- rnorm(n, 2.13, 0.05)
 S <- rnorm(n, 1.17, 0.12)
 C <- rnorm(n, 0.63, 0.15)
 P <- rnorm(n, 0.50, 0.10)
-E <- R * K * L * S * C * P
+E <- R * K * L * S * C * P # running the model
 mean(E)
 sd(E)
 hist(E, col = "LightBlue")
