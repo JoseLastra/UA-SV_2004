@@ -17,7 +17,7 @@ options(warn=0)
 
 #### Load Thur data, similar to those used in DOI 10.7717/peerj.9558 ####
 #    you may have to set the working directory with setwd() 
-setwd("C:/PERC/Wednesday")
+setwd("C:/github/UA-SV_2004/3 Wednesday/Practical/")
 prec <- as.numeric(readLines("agERA5prec.txt"))
 airt <- as.numeric(readLines("temp.txt"))
 epot <- as.numeric(readLines("evap.txt"))
@@ -281,7 +281,7 @@ step <- c(0.3, 1.2, 0.2, 2.0, 0.02,0.002,0.0015)
 set.seed(1234567)
 N <- 10000
 #### BELOW: replace 2000 by N once the acceptance rate ~ 0.25 !!!! ####
-s <- metropolis(2000, defaultPars, initState, ipar, pModpars, beta1, sigma.delta, 
+s <- metropolis(N, defaultPars, initState, ipar, pModpars, beta1, sigma.delta, 
                 sigma.eta, prop0, step, prec.cal, airt.cal, epot.cal, runoff.cal) 
 
 # trace plots
