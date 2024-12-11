@@ -29,6 +29,15 @@ rm(list = ls(all = T))
 #P(Rain) = P(Rain | Thunderstorm) * P(Thunderstorm) + P(Rain | No Thunderstorm) * P(No Thunderstorm)
 #P(Rain) = 0.8 * 0.02 + 0.05 * 0.98
 
+##------------------------------------------------------------------------#
+## 4.- Practical session afternoon Bayesian calibration for model parameter uncertainty ----
+
+
+
+
+
+
+
 
 
 
