@@ -39,6 +39,7 @@ conf_matrix_new <- drenthe_data %>%
 print(conf_matrix_new)
 
 ### sum and sum diagonal ----
+## Purity is the proportion of the total number of observations that were correctly classified 
 purity_old <- sum(diag(conf_matrix_old)/sum(conf_matrix_old))
 purity_new <- sum(diag(conf_matrix_new)/sum(conf_matrix_new))
 
