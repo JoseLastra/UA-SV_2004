@@ -14,11 +14,33 @@ rm(list = ls(all = T))
 
 ## ------------------------------------------------------------------------#
 # 3.- Exercises -----
+## 3.1.- Map purity index Drenthe -----
+drenthe_data <- read_csv('4 Thursday/Lecture/soil_obs_drenthe.csv')
+
+### contingency table for columns Observation, Soil_old, Soil_new ------
+
+# P=thick
+# peat; mP=thick peat soil with mineral surface horizon; PY=thin peat soil; mPY=thin
+# peat soil with mineral surface horizon; BF=brown forest soil; PZ=podzol; E=earth
+# soil; PS=plaggen soil; T=till soil; S=sandy vague soil
+soil_classes_count <- drenthe_data %>%
+  group_by(Observation) %>%
+  count()
 
 
+conf_matrix_old <- drenthe_data %>%
+  select(Observation, Soil_old) %>%
+  table()
+print(conf_matrix_old)
 
+conf_matrix_new <- drenthe_data %>%
+  select(Observation, Soil_new) %>%
+  table()
+print(conf_matrix_new)
 
-
+### sum and sum diagonal ----
+purity_old <- sum(diag(conf_matrix_old)/sum(conf_matrix_old))
+purity_new <- sum(diag(conf_matrix_new)/sum(conf_matrix_new))
 
 
 
