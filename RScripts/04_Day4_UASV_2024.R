@@ -43,7 +43,8 @@ print(conf_matrix_new)
 purity_old <- sum(diag(conf_matrix_old)/sum(conf_matrix_old))
 purity_new <- sum(diag(conf_matrix_new)/sum(conf_matrix_new))
 
-
+##------------------------------------------------------------------------------#
+# 4.- Afternoon practical Validation and cross-validation -----
 
 
 
