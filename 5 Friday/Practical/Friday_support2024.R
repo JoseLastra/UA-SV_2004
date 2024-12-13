@@ -203,8 +203,7 @@ pb <- txtProgressBar(
 )
 
 ## Loop over all soil property realizations
-for (i in 1:nreal)
-{
+for (i in 1:nreal){
   vn_index_columns <- c(
     1, 2, # Coordinates
     i + 2 + 0 * nreal, # pH
